@@ -1,14 +1,25 @@
 import React, { useState } from "react";
-import Wheel from "./components/wheel";
+import Wheel from "./components/ruleta/Wheel";
+import PlayerStats from "./components/jugador/PlayerStats";
+
+const initialPlayers = [
+  { name: "Jugador 1", lives: 3 },
+  { name: "Jugador 2", lives: 3 }
+];
 
 function App() {
-  const [result, setResult] = useState("");
+  const [players, setPlayers] = useState(initialPlayers);
+  const [currentPlayerIndex, setCurrentPlayerIndex] = useState(0);
 
   return (
-    <div>
-      <h1>Ruleta del Destino 🎰</h1>
-      <Wheel onResult={setResult} />
-      {result && <h2>Resultado: {result}</h2>}
+    <div className="game-container">
+      <Wheel
+        players={players}
+        setPlayers={setPlayers}
+        currentPlayerIndex={currentPlayerIndex}
+        setCurrentPlayerIndex={setCurrentPlayerIndex}
+      />
+      <PlayerStats players={players} />
     </div>
   );
 }
