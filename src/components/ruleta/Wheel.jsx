@@ -8,15 +8,8 @@ const options = [
   { text: "Avanza 3", effect: (player) => (player.position += 3) },
   { text: "Pierde Vida", effect: (player) => (player.lives--) },
   { text: "Gana Turno", effect: (player) => (player.extraTurn = true) },
-  { text: "Retrocede 2", effect: (player) => (player.position -= 2) },
-  { text: "Gana 2 Vidas", effect: (player) => (player.lives += 2) }
+  { text: "Gana Turno", effect: (player) => (player.extraTurn = true) }
 ];
-
-const initialPlayers = [
-  { name: "Jugador 1", lives: 3, skipTurn: false },
-  { name: "Jugador 2", lives: 3, skipTurn: false }
-];
-initialPlayers;
 
 const Wheel = ({ players, setPlayers, currentPlayerIndex, setCurrentPlayerIndex, setHistory }) => {
   const [position, setPosition] = useState(0);
@@ -45,18 +38,17 @@ const Wheel = ({ players, setPlayers, currentPlayerIndex, setCurrentPlayerIndex,
     setPlayers((prevPlayers) => {
       const updatedPlayers = [...prevPlayers];
       options[finalPosition].effect(updatedPlayers[currentPlayerIndex]);
-  
+
       setHistory((prevHistory) => {
         const newEvent = `${updatedPlayers[currentPlayerIndex].name} obtuvo: ${options[finalPosition].text}`;
         return prevHistory[0] !== newEvent ? [newEvent, ...prevHistory.slice(0, 4)] : prevHistory;
       });
-  
+
       return updatedPlayers;
     });
-  
+
     setCurrentPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
   };
-  
 
   return (
     <div className="wheel-container">
@@ -70,12 +62,19 @@ const Wheel = ({ players, setPlayers, currentPlayerIndex, setCurrentPlayerIndex,
           </div>
         ))}
       </div>
-      <button onClick={spin} disabled={isSpinning || players[currentPlayerIndex].skipTurn} className="spin-button">
-        Girar ({players[currentPlayerIndex].name})
+      <button 
+        onClick={spin} 
+        disabled={isSpinning || players[currentPlayerIndex].skipTurn} 
+        className="spin-button"
+      >
+        <img  
+          className="button-play"
+          src={`/img/botonPlay.png`} 
+          alt="Botón Girar"
+        />
       </button>
     </div>
   );
 };
 
 export default Wheel;
-
