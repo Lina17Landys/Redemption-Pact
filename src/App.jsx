@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Players from "./pages/Players";
-import GameScreen from "./pages/Game";
-import Results from "./pages/Results";
-import Instructions from "./pages/Instructions";
+import Home from "./Screens/Home";
+import Players from "./Screens/Players";
+import GameScreen from "./Screens/Game";
+import Results from "./Screens/Results";
+import Instructions from "./Screens/Instructions";
 import { GameProvider } from "./context/GameContext";
 import "./App.css";
 
