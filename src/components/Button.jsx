@@ -1,3 +1,13 @@
 export default function Button({ onClick, children }) {
-    return <button onClick={onClick}>{children}</button>;
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            onClick();
+        }
+    };
+
+    return (
+        <button onClick={onClick} onKeyDown={handleKeyPress}>
+            {children}
+        </button>
+    );
 }

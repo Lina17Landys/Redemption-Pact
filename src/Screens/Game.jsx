@@ -4,7 +4,7 @@ import Roulette from "../components/Roulette";
 import Scoreboard from "../components/Scoreboard";
 
 const GameScreen = () => {
-    const navigate = useNavigate(); // Hook para la navegación
+    const navigate = useNavigate(); 
 
     return (
         <div className="game-screen">

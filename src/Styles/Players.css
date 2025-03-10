@@ -124,7 +124,7 @@ input {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(rgba(0, 0, 0, 0.2), transparent);
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -136,6 +136,7 @@ input {
     scrollbar-width: thin;
     scrollbar-color: #6c6c6c transparent;
 }
+
 
 .players-list::-webkit-scrollbar {
     width: 4px; 
