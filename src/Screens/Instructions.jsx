@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../Styles/Instructions.css"; // Asegúrate de crear este archivo CSS para los estilos
+import "../Styles/Instructions.css";
 
 export default function Instructions() {
     return (

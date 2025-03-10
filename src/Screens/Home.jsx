@@ -3,11 +3,10 @@ import "./../Styles/Home.css";
 import logo2 from "./../assets/logo2.png";
 import botonstart from "./../assets/botonstart.png";
 import homeimage from "./../assets/homeimage.png";
-import background from "./../assets/background.png";
 
 export default function Home() {
   return (
-    <div className="home-page"> {/* Clase específica para la página Home */}
+    <div className="home-page"> 
       <div className="home-container">
         <div className="marcouno"> </div>
         <div className="left-content">

@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import Roulette from "../components/Roulette";
-import Scoreboard from "../components/Scoreboard";
+import RuletaPage from "./ruletaPage/RuletaPage"
 
 const GameScreen = () => {
     const navigate = useNavigate(); 
@@ -12,8 +11,7 @@ const GameScreen = () => {
         <FaArrowLeft size={30} color="white" />
       </button>
 
-            <Roulette />
-            <Scoreboard />
+            <RuletaPage />
         </div>
     );
 };

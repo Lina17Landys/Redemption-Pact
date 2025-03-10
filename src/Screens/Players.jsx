@@ -51,7 +51,7 @@ export default function Players() {
     const rect = event.target.getBoundingClientRect();
     setMenuPosition({
       top: rect.top + window.scrollY,
-      left: rect.right + 10, // Posiciona a la derecha del avatar
+      left: rect.right + 10, 
     });
     setSelectedAvatar(index);
   };
@@ -98,7 +98,6 @@ export default function Players() {
         Iniciar Juego
       </button>
 
-      {/* Menú de selección de avatares (posición fija) */}
       {selectedAvatar !== null && (
         <div className="avatar-options" style={{ top: menuPosition.top, left: menuPosition.left }}>
           <button className="close-avatar-options" onClick={() => setSelectedAvatar(null)}>

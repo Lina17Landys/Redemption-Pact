@@ -1,23 +1,9 @@
-<<<<<<< HEAD
-import React from "react";
-import RuletaPage from "./screens/ruletaPage/RuletaPage"; 
-
-function App() {
-  return (
-    <div className="game-container">
-      <RuletaPage /> 
-    </div>
-  );
-}
-
-export default App;
-=======
 import { Routes, Route } from "react-router-dom";
-import Home from "./Screens/Home";
-import Players from "./Screens/Players";
-import GameScreen from "./Screens/Game";
-import Results from "./Screens/Results";
-import Instructions from "./Screens/Instructions";
+import Home from "./screens/Home";
+import Players from "./screens/Players";
+import GameScreen from "./screens/Game";
+import Results from "./screens/Results";
+import Instructions from "./screens/Instructions";
 import { GameProvider } from "./context/GameContext";
 import "./App.css";
 
@@ -34,4 +20,3 @@ export default function App() {
         </GameProvider>
     );
 }
->>>>>>> cea78f810ec68b41e53898a6ed501469b9ed11c3
