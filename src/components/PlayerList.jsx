@@ -1,15 +1,13 @@
-import { useContext } from "react";
-import { GameContext } from "../context/GameContext";
-
-export default function PlayerList() {
-  const { players, removePlayer } = useContext(GameContext);
+const PlayerList = ({ players, handleDelete }) => {
   return (
-    <ul>
-      {players.map((player, index) => (
-        <li key={index}>
-          {player} <button onClick={() => removePlayer(index)}>X</button>
-        </li>
-      ))}
-    </ul>
+      <div className="players-list">
+          {players.map(player => (
+              <div key={player.id} className="player-item">
+                  <img src={player.avatar} alt="Avatar" className="player-avatar" />
+                  <span>{player.name}</span>
+                  <button className="delete-button" onClick={() => handleDelete(player.id)}>✖</button>
+              </div>
+          ))}
+      </div>
   );
-}
+};

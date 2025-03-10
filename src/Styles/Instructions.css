@@ -1,0 +1,46 @@
+.instructions-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #2b2b2b;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+h2 {
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+ol, ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.back-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffcc00;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #e6b800;
+}
