@@ -64,7 +64,6 @@ const Wheel = () => {
       {modalVisible && (
         <div className="modal-overlay">
           <div className="modal-content">
-            <h2> ¡Reto!</h2>
             <p>{currentChallenge}</p>
             <button onClick={() => setModalVisible(false)}>Aceptar</button>
           </div>
