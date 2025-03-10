@@ -16,38 +16,42 @@ function FinalPage() {
     );
   }
 
-  // Ordenar jugadores por vidas (de mayor a menor)
   const sortedPlayers = [...players].sort((a, b) => b.lives - a.lives);
-  const heaven = sortedPlayers[0]; // Mayor cantidad de vidas
-  const hell = sortedPlayers[sortedPlayers.length - 1]; // Menor cantidad de vidas
-  const limbo = sortedPlayers.slice(1, -1); // Jugadores en el medio
+  const heaven = sortedPlayers[0]; 
+  const hell = sortedPlayers[sortedPlayers.length - 1];
+  const limbo = sortedPlayers.slice(1, -1);
 
   return (
     <div className="final-container">
-      <h1>Resultados Finales</h1>
 
-      <div className="heaven">
-        <h2>☁️ Cielo</h2>
-        <p>{heaven.name} ha escapado del infierno.</p>
+        <img className="logo-2" src="./img/logo.png"/>
+      <h1 className="final-title">Partida finalizada</h1>
+  
+      <div className="results-row">
+        <div className="heaven">
+          <p>{heaven.name} ha escapado del infierno.</p>
+        </div>
+  
+        <div className="limbo">
+          {limbo.length > 0 ? (
+            limbo.map((player) => <p key={player.name}>{player.name} quedó en el limbo.</p>)
+          ) : (
+            <p>Nadie quedó en el limbo.</p>
+          )}
+        </div>
+  
+        <div className="hell">
+          <p>{hell.name} ha sido condenado al infierno.</p>
+        </div>
       </div>
-
-      <div className="limbo">
-        <h2>⚫ Limbo</h2>
-        {limbo.length > 0 ? (
-          limbo.map((player) => <p key={player.name}>{player.name} quedó en el limbo.</p>)
-        ) : (
-          <p>Nadie quedó en el limbo.</p>
-        )}
-      </div>
-
-      <div className="hell">
-        <h2>🔥 Infierno</h2>
-        <p>{hell.name} ha sido condenado al infierno.</p>
-      </div>
-
-      <button onClick={() => navigate("/")}>Volver al inicio</button>
+  
+      <button onClick={() => navigate("/")}>
+        <img src="/img/botonReplay.png" alt="Reiniciar" className="button-image" />
+      </button>
     </div>
   );
+  
 }
 
 export default FinalPage;
+

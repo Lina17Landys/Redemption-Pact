@@ -1,40 +1,72 @@
 .final-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
     text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .heaven, .limbo, .hell {
-    margin: 20px auto;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.final-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.results-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.heaven, .limbo, .hell {
+    width: 30%;
     padding: 15px;
     border-radius: 10px;
-    width: 50%;
     color: white;
-  }
-  
-  .heaven {
-    background-color: #87CEEB;
-  }
-  
-  .limbo {
-    background-color: #808080;
-  }
-  
-  .hell {
-    background-color: #FF4500;
-  }
-  
-  button {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.heaven { background-color: #74b9ff; }  
+.limbo { background-color: #636e72; }  
+.hell { background-color: #d63031; }  
+
+button {
+    background: none; 
+    border: none; 
     cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #555;
-  }
-  
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.button-image {
+    width: 200px; 
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+button:hover .button-image {
+    transform: scale(1.1); 
+}
+
+.logo-2 {
+    width: 420px;  
+    height: auto;   
+    position: relative;
+    top: -80px;
+}
