@@ -1,78 +1,75 @@
 import React, { useState } from "react";
 import "./Wheel.css";
-import PlayerStats from "../jugador/PlayerStats";
 
-const options = [
-  { text: "Vida Extra", effect: (player) => (player.lives++) },
-  { text: "Pierde Turno", effect: (player) => (player.skipTurn = true) },
-  { text: "Avanza 3", effect: (player) => (player.position += 3) },
-  { text: "Pierde Vida", effect: (player) => (player.lives--) },
-  { text: "Gana Turno", effect: (player) => (player.extraTurn = true) },
-  { text: "Gana Turno", effect: (player) => (player.extraTurn = true) }
+const challenges = [
+  "Desafía a un jugador a un mini-juego rápido (piedra, papel o tijera). Si ganas, robas 1 vida, si pierdes, la cedes.",
+  "Lanza un objeto al aire y atrápalo tres veces seguidas. Si lo logras, puedes robar dos vidas de otro jugador.",
+  "Si estás en desventaja, puedes apostar 2 vidas en un reto contra otro jugador. Si ganas, recuperas ambas; si pierdes, quedas sin ellas.",
+  "Elige a otro jugador para hacer un reto juntos (ej. decir una palabra alternando letras). Si lo logran, ambos ganan 1 vida.",
+  "Si un jugador cae en una casilla peligrosa, otro puede gastar 1 vida para evitarle la penalización.",
+  "Todos deben votar entre salvar a un jugador de perder 1 vida o dejarlo caer en la penalización.",
 ];
 
-const Wheel = ({ players, setPlayers, currentPlayerIndex, setCurrentPlayerIndex, setHistory }) => {
+const Wheel = () => {
   const [position, setPosition] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [currentChallenge, setCurrentChallenge] = useState("");
 
   const spin = () => {
-    if (isSpinning || players[currentPlayerIndex].skipTurn) return;
+    if (isSpinning) return;
     setIsSpinning(true);
 
-    const randomStops = Math.floor(Math.random() * 20) + 10;
-    const finalPosition = (position + randomStops) % options.length;
+    const randomStops = Math.floor(Math.random() * 6) + 5;
+    const finalPosition = Math.floor(Math.random() * 6);
 
     let count = 0;
     const interval = setInterval(() => {
-      setPosition((prev) => (prev + 1) % options.length);
+      setPosition((prev) => (prev + 1) % 6);
       count++;
       if (count >= randomStops) {
         clearInterval(interval);
-        setIsSpinning(false);
-        applyEffect(finalPosition);
+        setTimeout(() => {
+          setIsSpinning(false);
+          showChallenge(finalPosition);
+        }, 500);
       }
     }, 150);
   };
 
-  const applyEffect = (finalPosition) => {
-    setPlayers((prevPlayers) => {
-      const updatedPlayers = [...prevPlayers];
-      options[finalPosition].effect(updatedPlayers[currentPlayerIndex]);
-
-      setHistory((prevHistory) => {
-        const newEvent = `${updatedPlayers[currentPlayerIndex].name} obtuvo: ${options[finalPosition].text}`;
-        return prevHistory[0] !== newEvent ? [newEvent, ...prevHistory.slice(0, 4)] : prevHistory;
-      });
-
-      return updatedPlayers;
-    });
-
-    setCurrentPlayerIndex((prevIndex) => (prevIndex + 1) % players.length);
+  const showChallenge = (finalPosition) => {
+    setCurrentChallenge(challenges[finalPosition]);
+    setModalVisible(true);
   };
 
   return (
     <div className="wheel-container">
+      <img className="logo-img" src="/img/logo.png" alt="Logo" />
+
       <div className="wheel vertical">
-        {options.map((opt, index) => (
+        {[...Array(6)].map((_, index) => (
           <div
             key={index}
             className={`wheel-item ${index === position ? "selected" : ""}`}
           >
-            {opt.text}
+            {index + 1}
           </div>
         ))}
       </div>
-      <button 
-        onClick={spin} 
-        disabled={isSpinning || players[currentPlayerIndex].skipTurn} 
-        className="spin-button"
-      >
-        <img  
-          className="button-play"
-          src={`/img/botonPlay.png`} 
-          alt="Botón Girar"
-        />
+
+      <button onClick={spin} disabled={isSpinning} className="spin-button">
+        <img className="button-play" src="/img/botonPlay.png" alt="Botón Girar" />
       </button>
+
+      {modalVisible && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2> ¡Reto!</h2>
+            <p>{currentChallenge}</p>
+            <button onClick={() => setModalVisible(false)}>Aceptar</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

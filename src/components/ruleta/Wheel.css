@@ -12,10 +12,9 @@ body {
     flex-direction: column;
     overflow: hidden;
     height: 390px;
-    width: 570px;
-    border: 5px solid #000;
+    width: 410px;
     padding: 10px;
-    background: #991B1B;
+    background: #991b1bc4;
     border-radius: 10px;
   }
   
@@ -23,7 +22,7 @@ body {
     text-align: center;
     padding: 15px;
     color: white;
-    background: #4E1A1A;
+    background: #4D080D;
     border-radius: 10px;
     margin-bottom: 10px;
     transition: transform 0.2s ease;
@@ -31,6 +30,8 @@ body {
   
   .selected {
     background: gold;
+    color: #000;
+    font-weight: bold;
     border-radius: 10px;
     transform: scale(1.2);
   }
@@ -39,7 +40,7 @@ body {
     width: 180px;
     height: 60px;
     position: absolute;
-    top: 215px;
+    top: 320px;
     left: 185px;
     transform: translate(-50%, -150%);
     transition: transform 0.3s ease-in-out; 
@@ -57,4 +58,52 @@ body {
   
   .spin-button:hover .button-play {
     transform: translate(-50%, -150%) scale(1.1); 
+  }
+
+  .logo-img {
+    width: 400px; 
+    height: auto; 
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: rgba(231, 64, 64, 0.822);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  .modal-content p {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .modal-content button {
+    background: #A00E10;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .modal-content button:hover {
+    background: #5e0506;
   }
