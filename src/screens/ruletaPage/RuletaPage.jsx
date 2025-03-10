@@ -14,6 +14,8 @@ function RuletaPage() {
 
   return (
     <div className="game-container">
+
+
       <div className="stats-history">
         <PlayerStats players={players} setPlayers={setPlayers} />
       </div>
@@ -24,6 +26,9 @@ function RuletaPage() {
         currentPlayerIndex={currentPlayerIndex}
         setCurrentPlayerIndex={setCurrentPlayerIndex}
       />
+
+      <img className="lujuria" src="./public/img/lujuria.png"/>
+
     </div>
   );
 }
