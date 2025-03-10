@@ -1,0 +1,40 @@
+.final-container {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .heaven, .limbo, .hell {
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
+    color: white;
+  }
+  
+  .heaven {
+    background-color: #87CEEB;
+  }
+  
+  .limbo {
+    background-color: #808080;
+  }
+  
+  .hell {
+    background-color: #FF4500;
+  }
+  
+  button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  

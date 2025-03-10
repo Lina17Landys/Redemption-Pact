@@ -5,6 +5,7 @@ import GameScreen from "./screens/Game";
 import Results from "./screens/Results";
 import Instructions from "./screens/Instructions";
 import { GameProvider } from "./context/GameContext";
+import FinalPage from "./screens/finalPage/finalPage";
 import "./App.css";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
                 <Route path="/game" element={<GameScreen />} />
                 <Route path="/results" element={<Results />} />
                 <Route path="/instructions" element={<Instructions />} />
+                <Route path="/final" element={<FinalPage />} />
             </Routes>
         </GameProvider>
     );

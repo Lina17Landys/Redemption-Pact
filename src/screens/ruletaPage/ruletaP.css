@@ -22,4 +22,36 @@
     pointer-events: none; 
   }
   
+  .final-button {
+    width: 200px; 
+  height: auto;
+  margin-right: 70px;
+    background: none; 
+    border: none;    
+    padding: 0;      
+    cursor: pointer;   
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    outline: none; 
+    transition: transform 0.2s ease-in-out;   
+  }
+  
+  .final-button:hover {
+    transform: scale(1.1); 
+  }
+  
+  .final-button:active {
+    transform: scale(1.2);  
+  }
+  .final-button:focus,
+  .final-button:hover {
+    background: none;  
+    outline: none;     
+  }
+  
+  .final-button img {
+    display: block;   
+    width: 100%;      
+  }
   

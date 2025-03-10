@@ -36,29 +36,46 @@ body {
     transform: scale(1.2);
   }
   
-  .button-play {
+  .spin-button {
     width: 180px;
     height: 60px;
     position: absolute;
-    top: 320px;
-    left: 185px;
-    transform: translate(-50%, -150%);
-    transition: transform 0.3s ease-in-out; 
-  }
-  
-  .spin-button {
+    top: 550px;
+    right: 360px;
+    transform: translate(-50%, 0);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -150%);
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .spin-button:hover .button-play {
-    transform: translate(-50%, -150%) scale(1.1); 
-  }
+    background: none !important; 
+    border: none !important; 
+    outline: none !important; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spin-button, .spin-button:focus, .spin-button:active {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-shadow: none !important;
+}
+
+.button-play {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.spin-button:hover .button-play {
+    transform: scale(1.1);
+}
+
+.spin-button:active .button-play {
+    transform: scale(1.2);
+}
+
 
   .logo-img {
     width: 400px; 
