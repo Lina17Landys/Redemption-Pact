@@ -7,12 +7,13 @@ body {
 }
 
 .wheel {
-  margin-top: 10px;
+position: relative;
+  margin-top: 70px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    height: 370px;
-    width: 410px;
+    height: 340px;
+    width: 380px;
     padding: 10px;
     background: #991b1bc4;
     border-radius: 10px;
@@ -20,7 +21,7 @@ body {
   
   .wheel-item {
     text-align: center;
-    padding: 15px;
+    padding: 13px;
     color: white;
     background: #4D080D;
     border-radius: 10px;
@@ -37,11 +38,11 @@ body {
   }
   
   .spin-button {
-    width: 180px;
+    width: 120px;
     height: 60px;
     position: absolute;
-    top: 550px;
-    right: 360px;
+    top: 480px;
+    right: 400px;
     transform: translate(-50%, 0);
     position: absolute;
     background: none !important; 
@@ -76,12 +77,6 @@ body {
     transform: scale(1.2);
 }
 
-
-  .logo-img {
-    width: 400px; 
-    height: auto; 
-  }
-  
   .modal-overlay {
     position: fixed;
     top: 0;
@@ -98,9 +93,10 @@ body {
     background: rgba(231, 64, 64, 0.822);
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
+    text-align: justify;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 300px;
+    color: white;
   }
   
   .modal-content h2 {
@@ -119,6 +115,8 @@ body {
     padding: 10px 15px;
     cursor: pointer;
     border-radius: 5px;
+    display: block;
+    margin: 0 auto; /* Centra el botón */
   }
   
   .modal-content button:hover {

@@ -23,35 +23,39 @@ function FinalPage() {
 
   return (
     <div className="final-container">
-
-        <img className="logo-2" src="./img/logo.png"/>
+      <img className="logo-2" src="./img/logo.png" alt="Logo" />
       <h1 className="final-title">Partida finalizada</h1>
-  
+
       <div className="results-row">
         <div className="heaven">
+          <img src={heaven.avatar} alt={heaven.name} className="player-avatar" />
           <p>{heaven.name} ha escapado del infierno.</p>
         </div>
-  
+
         <div className="limbo">
           {limbo.length > 0 ? (
-            limbo.map((player) => <p key={player.name}>{player.name} quedó en el limbo.</p>)
+            limbo.map((player) => (
+              <div key={player.name} className="limbo-player">
+                <img src={player.avatar} alt={player.name} className="player-avatar" />
+                <p>{player.name} quedó en el limbo.</p>
+              </div>
+            ))
           ) : (
             <p>Nadie quedó en el limbo.</p>
           )}
         </div>
-  
+
         <div className="hell">
+          <img src={hell.avatar} alt={hell.name} className="player-avatar" />
           <p>{hell.name} ha sido condenado al infierno.</p>
         </div>
       </div>
-  
+
       <button onClick={() => navigate("/")}>
         <img src="/img/botonReplay.png" alt="Reiniciar" className="button-image" />
       </button>
     </div>
   );
-  
 }
 
 export default FinalPage;
-

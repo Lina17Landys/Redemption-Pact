@@ -34,7 +34,7 @@ body, html {
 }
 
 /* Título "Ingresar jugadores" */
-h2 {
+.title {
     position: absolute;
     z-index: 1;
     top: 10%;
@@ -65,7 +65,7 @@ h2 {
     align-items: center;
     gap: 8px;
     width: 90%;
-    max-width: 350px;
+    max-width: 300px;
     margin-top: -50px;
     position: relative;
     z-index: 1;
@@ -83,6 +83,8 @@ input {
 }
 
 .add-button {
+    position: relative;
+    top: -20px;
     background: red;
     color: white;
     border: none;
@@ -96,12 +98,11 @@ input {
     color: white;
     border: none;
     padding: 12px 24px;
-    margin-top: 20px;
+    margin-top: -10px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    position: relative;
-    bottom: 0;
+    position: static; /* Quitar position relative */
 }
 
 .remove-button {
@@ -161,26 +162,25 @@ input {
 
 .player-item {
     display: flex;
-    align-items: center;
-    gap: 5px;
+    justify-content: center;
+    align-items: center; /* Alinea los elementos verticalmente */
+    justify-content: space-between; /* Espacia el avatar, el nombre y la "X" */
     width: 100%;
+    max-width: 220px;
     padding: 5px;
     border-radius: 8px;
     color: white;
-    justify-content: space-between;
-    max-width: 220px;
+    text-align: center;
     position: relative;
 }
 
 .avatar-container {
     width: 40px;
     height: 40px;
+    margin-top: 25px;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #515076;
 }
 
@@ -199,18 +199,32 @@ input {
     flex-grow: 1;
 }
 
+/* Ajusta el botón "X" */
+.player-remove {
+    cursor: pointer;
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .avatar-options {
-    position: fixed; /* Se mantiene en la pantalla */
+    position: absolute; /* Cambiar de fixed a absolute */
     background-color: black;
     border-radius: 8px;
-    padding: 8px;
+    padding: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-    z-index: 9999; /* Asegura que esté encima de todo */
+    z-index: 9999;
     width: 140px;
-    max-height: 150px;
+    max-height: 140px;
     overflow-y: auto;
+
 }
+
 
 .avatar-options::-webkit-scrollbar {
     width: 3px;
@@ -254,9 +268,9 @@ input {
 
 /* Botón de cerrar la lista de avatares*/
 .close-avatar-options {
-    position: sticky;
-    top: 4px;
-    left: 150px;
+    position: absolute; /* Cambiado de sticky a absolute */
+    top: -30px; /* Asegura que esté arriba */
+    right: 5px;
     background: none;
     border: none;
     cursor: pointer;
@@ -267,8 +281,9 @@ input {
 
 .playersone-icon {
     position: absolute;
-    bottom: 19px; 
-    right: -20px;
-    width: 90px; 
+    z-index: 1;
+    bottom: 40px; 
+    right: -5px;
+    width: 70px; 
     pointer-events: none; 
 }

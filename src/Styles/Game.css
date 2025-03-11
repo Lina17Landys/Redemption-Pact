@@ -1,0 +1,30 @@
+.game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajusta el tamaño a la pantalla completa */
+}
+
+/* LOGO */
+.logo-img {
+    position: relative;
+    width: 400px;
+    height: auto;
+    top: 50px;
+    margin-bottom: 0px; /* Espaciado con la ruleta */
+}
+
+/* BOTÓN DE REGRESO */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+}
