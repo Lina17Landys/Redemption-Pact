@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+FELL+English&display=swap');
+
 .game-screen {
     display: flex;
     flex-direction: column;
@@ -11,7 +13,7 @@
     position: relative;
     width: 400px;
     height: auto;
-    top: 50px;
+    bottom: -80px;
     margin-bottom: 0px; /* Espaciado con la ruleta */
 }
 
@@ -27,4 +29,32 @@
 
 .back-button:hover {
     transform: scale(1.1);
+}
+
+.final-button {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+   
+.final-button:hover {
+    transform: translateX(-50%) scale(1.1); /* Mantiene la posición mientras crece */
+}
+  
+.final-button:active {
+    transform: translateX(-50%) scale(1.2);
+}
+
+  
+.final-button img {
+  position: relative;
+  z-index: 1;
+  top: -10px;
+  width: 150px;
+  display: block;       
 }

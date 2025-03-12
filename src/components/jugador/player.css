@@ -16,8 +16,8 @@
 .title-player{
   color: white;
   position: relative;
-  top: -50px;
-  right: -80px;
+  bottom: 20px;
+  margin-bottom: -10px;
 }
 
 .player-info {
@@ -26,6 +26,7 @@
   justify-content: space-between; /* Distribuye los elementos */
   background-color: rgba(153, 27, 27, 0.479);
   padding: 12px;
+  top: 0px;
   border-radius: 15px;
   width: 220px;
   height: 65px;

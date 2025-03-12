@@ -59,13 +59,12 @@ const Wheel = () => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [currentChallenge, setCurrentChallenge] = useState("");
-
   const spin = () => {
     if (isSpinning) return;
     setIsSpinning(true);
 
     const randomStops = Math.floor(Math.random() * 6) + 5;
-    const finalPosition = Math.floor(Math.random() * 6);
+    const finalPosition = Math.floor(Math.random() * challenges.length); // Ahora elige de toda la lista
 
     let count = 0;
     const interval = setInterval(() => {
