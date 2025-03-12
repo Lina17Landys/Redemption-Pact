@@ -6,7 +6,7 @@ const PlayerStats = ({ players, setPlayers }) => {
     setPlayers((prevPlayers) =>
       prevPlayers.map((player, i) =>
         i === index
-          ? { ...player, lives: Math.max(5, player.lives + amount) }
+          ? { ...player, lives: Math.max(0, player.lives + amount) }
           : player
       )
     );

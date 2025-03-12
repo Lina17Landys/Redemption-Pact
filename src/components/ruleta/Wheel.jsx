@@ -2,15 +2,6 @@ import React, { useState } from "react";
 import "./Wheel.css";
 
 const challenges = [
-  "Doble Tentación: Cada jugador apuesta 1 vida; quien saque el número más alto en un dado, gana todas.",
-  "Encanto Mortal: El jugador elige a otro para intercambiar vidas. Ambos lanzan un dado; el más alto roba 2 vidas del otro.",
-  "Batalla de Seducción: Todos los jugadores votan en secreto quién debería perder 1 vida. El que reciba más votos pierde.",
-  "Robo Pasional: Si el jugador intercambia posición con otro, el afectado pierde 2 vidas.",
-  "Pacto Secreto: Dos jugadores acuerdan compartir 1 vida. Se lanzan dos dados, si suman más de 8, el pacto se cumple; si no, ambos pierden 2 vidas.",
-  "Traición Ardiente: Si el jugador ha ayudado a alguien antes, ese jugador puede robarle 1 vida sin avisar.",
-  "Tentación Extrema: Si el jugador elige no moverse este turno, gana 1 vida. Pero si decide avanzar, pierde 2 vidas.",
-  "Apuesta de Deseo: Cada jugador elige si quiere arriesgar 2 vidas. Si lo hace, lanza un dado; si saca 4 o más, recupera 3 vidas. Si saca menos, las pierde.",
-  "Mentiras y Engaños: El jugador hace dos afirmaciones sobre el juego. Si otro jugador descubre la mentira, el mentiroso pierde 2 vidas.",
   "Corrupción Tentadora: Un jugador desafía a otro a un reto de piedra, papel o tijera. El ganador roba 2 vidas del otro.",
   "Festín Egoísta: Cada jugador lanza un dado. El que saque el número más alto gana 2 vidas, el más bajo pierde 1.",
   "Banquete Mortal: Todos pueden apostar 1 vida. El jugador con el dado más alto se queda con todas",
