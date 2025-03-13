@@ -80,6 +80,7 @@ input {
     color: white;
     outline: none;
     text-align: center;
+    font-family: 'IM FELL English', serif;
 }
 
 .add-button {
@@ -91,11 +92,19 @@ input {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    transition: transform 0.2s ease-in-out;  
+    font-family: 'IM FELL English', bold;
+}
+
+.add-button:hover {
+    transform: scale(1.1);
+    color: rgb(255, 255, 255);
 }
 
 .start-button {
+    font-family: 'IM FELL English', serif;
     background: darkred;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 12px 24px;
     margin-top: -10px;
@@ -103,6 +112,13 @@ input {
     cursor: pointer;
     font-size: 16px;
     position: static; /* Quitar position relative */
+    cursor: pointer;   
+    transition: transform 0.2s ease-in-out;  
+}
+
+.start-button:hover {
+    transform: scale(1.1);
+    color: rgb(255, 255, 255);
 }
 
 .remove-button {

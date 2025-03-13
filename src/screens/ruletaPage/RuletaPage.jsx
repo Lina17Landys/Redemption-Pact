@@ -23,10 +23,7 @@ function RuletaPage() {
       currentPlayerIndex={currentPlayerIndex}
       setCurrentPlayerIndex={setCurrentPlayerIndex}
     />
-
-    <button className="final-button" onClick={() => navigate("/final", { state: { players } })}>
-      <img className="final-play" src="/img/btnFinal.png" alt="Finalizar" />
-    </button>
+    
     <img className="lujuria" src="./public/img/lujuria.png" alt="Lujuria" />
   </div>
 </div>
